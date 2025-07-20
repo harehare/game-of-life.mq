@@ -118,27 +118,9 @@ Please follow the installation guide at: https://mqlang.org/book/start/install
 
 Once mq is installed, you can run the Game of Life:
 
-## File Structure
-
-```
-mq-game-of-life/
-├── game_of_life.mq    # Main implementation with all patterns
-├── run.sh             # Convenient runner script
-└── README.md          # This documentation
-```
-
-## Contributing
-
-Feel free to add new patterns or improve the implementation! Classic Game of Life patterns that would be great additions include:
-
-- More spaceships (e.g., Canada goose, Dart)
-- Additional oscillators (e.g., Pinwheel, Octagon)
-- Puffer trains and rakes
-- Still life patterns
-
 ## License
 
-This project is open source. Feel free to use, modify, and distribute.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ---
 
