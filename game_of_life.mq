@@ -12,16 +12,18 @@ def safe_get_1d(row, col):
   if (col >= 0 && col < len(row)):
     nth(row, col)
   else:
-    0;
+    0
+end
 
 def safe_get_2d(grid, row, col):
   if (row >= 0 && row < len(grid)):
     safe_get_1d(nth(grid, row), col)
   else:
-    0;
+    0
+end
 
 def count_neighbors(grid, row, col):
-  let neighbors = [
+  [
     safe_get_2d(grid, row - 1, col - 1),
     safe_get_2d(grid, row - 1, col),
     safe_get_2d(grid, row - 1, col + 1),
@@ -31,7 +33,7 @@ def count_neighbors(grid, row, col):
     safe_get_2d(grid, row + 1, col),
     safe_get_2d(grid, row + 1, col + 1)
   ]
-  | sum(neighbors);
+  | sum();
 
 def apply_rules(current_cell, neighbor_count):
   if (current_cell == 1):
@@ -40,7 +42,8 @@ def apply_rules(current_cell, neighbor_count):
     else: 0
   else:
     if (neighbor_count == 3): 1
-    else: 0;
+    else: 0
+end
 
 def next_generation(grid):
   let height = len(grid)
@@ -53,13 +56,15 @@ def next_generation(grid):
         | let neighbor_count = count_neighbors(grid, row, col)
         | apply_rules(current_cell, neighbor_count);
     );
-);
+)
+end
 
 def grid_to_string(grid):
   map(grid,
     fn(row):
       map(row, fn(cell): if (cell == 1): "█" else: " ";) | join("");
-  ) | join("\n");
+  ) | join("\n")
+end
 
 def run_game_of_life(initial_grid, generations):
   let current_grid = initial_grid
@@ -78,7 +83,8 @@ ${line}")
       # Calculate next generation
       | let current_grid = next_generation(current_grid)
       | let i = i + 1
-      | current_grid;;
+      | current_grid;
+end
 
 # Create a simple glider pattern
 | let die_hard = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
