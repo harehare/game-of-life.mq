@@ -79,7 +79,7 @@ Edit the `game_of_life.mq` file and uncomment the desired pattern at the bottom:
 
 Then run:
 ```bash
-mq game_of_life.mq
+mq 'include "game_of_life" | run_game_of_life(die_hard, 50) | ""'
 ```
 
 ## Pattern Recommendations
