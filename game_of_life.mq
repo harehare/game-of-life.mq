@@ -10,14 +10,14 @@ def sum(arr):
 
 def safe_get_1d(row, col):
   if (col >= 0 && col < len(row)):
-    nth(row, col)
+    row[col]
   else:
     0
 end
 
 def safe_get_2d(grid, row, col):
   if (row >= 0 && row < len(grid)):
-    safe_get_1d(nth(grid, row), col)
+    safe_get_1d(grid[row], col)
   else:
     0
 end
@@ -47,7 +47,7 @@ end
 
 def next_generation(grid):
   let height = len(grid)
-  | let width = len(nth(grid, 0))
+  | let width = len(grid[0])
   | map(range(0, height - 1, 1),
   fn(row):
     map(range(0, width - 1, 1),
