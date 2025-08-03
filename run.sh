@@ -22,8 +22,8 @@ if [[ "$1" == "-h" || "$1" == "--help" ]]; then
     exit 0
 fi
 
-echo "Running Game of Life with pattern: $PATTERN, generations: $GENERATIONS"
-echo ""
+echo "Running Game of Life with pattern: $PATTERN, generations: $GENERATIONS" >&2
+echo "" >&2
 
 # Run the mq interpreter with query string
-mq -I null "include \"game_of_life\" | run_game_of_life($PATTERN, $GENERATIONS) | \"\""
+mq "include \"game_of_life\" | run_game_of_life($PATTERN, $GENERATIONS) | \"\""
